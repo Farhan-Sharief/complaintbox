@@ -26,12 +26,13 @@ export default function Sidebar({ collapsed, setCollapsed }) {
       <div className="p-6 space-y-6">
 
         <div className="flex justify-between items-center">
-          {!collapsed && (
-            <h1 className="text-xl font-bold text-orange-400">
-              Control Panel
-            </h1>
-          )}
-
+         <h1
+  className={`text-xl font-bold text-orange-400 transition-all duration-300 ${
+    collapsed ? "opacity-0 w-0 overflow-hidden" : "opacity-100"
+  }`}
+>
+  Control Panel
+</h1>
           <button onClick={() => setCollapsed(!collapsed)}>
             {collapsed ? (
               <Menu className="text-white" />
