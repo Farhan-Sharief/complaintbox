@@ -4,11 +4,11 @@ import bcrypt from "bcryptjs";
 const users = [
   {
     username: "Farhan",
-    password: bcrypt.hashSync("F@ruhibgm", 10),
+    password:"$2b$10$g8hQ/aszaUin4SvO74.cDukXZff9VlmP5G8VTDCsDHzXN6sO/M3Vm",
   },
   {
     username: "Shahid",
-    password: bcrypt.hashSync("Sh@hidvcb", 10),
+    password: "$2b$10$uI9FiYBhsXiOKdxqR5oueOPRMlNh9hnMv7maI7Ud34yfL.SPCwfua",
   },
 ];
 
