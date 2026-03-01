@@ -12,7 +12,7 @@ export default function Liabilities() {
     amount: "",
   });
 
-  const API = "http://localhost:5000/api/liability";
+  const API = "https://complaintbox-ownf.onrender.com/api/liability";
 
   /* ================= FETCH ================= */
 

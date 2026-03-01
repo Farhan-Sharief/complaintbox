@@ -9,7 +9,7 @@ export default function Dashboard() {
   const [summary, setSummary] = useState(null);
   const [loading, setLoading] = useState(true);
 
-  const API = "http://localhost:5000/api/dashboard/summary";
+  const API = "https://complaintbox-ownf.onrender.com/api/dashboard/summary";
 
   useEffect(() => {
     const fetchSummary = async () => {

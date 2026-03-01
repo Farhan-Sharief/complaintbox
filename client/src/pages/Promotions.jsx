@@ -12,7 +12,7 @@ export default function Promotions() {
     status: "upcoming",
   });
 
-  const API = "http://localhost:5000/api/promotion";
+  const API = "https://complaintbox-ownf.onrender.com/api/promotion";
 
   /* ================= FETCH PROMOTIONS ================= */
 

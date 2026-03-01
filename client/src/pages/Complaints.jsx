@@ -11,7 +11,7 @@ export default function Complaints() {
     text: "",
   });
 
-  const API = "http://localhost:5000/api/complaint";
+  const API = "https://complaintbox-ownf.onrender.com/api/complaint";
 
   /* ================= FETCH ================= */
 

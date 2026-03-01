@@ -5,7 +5,7 @@ export default function PromotionWidget() {
   const [promotions, setPromotions] = useState([]);
   const [loading, setLoading] = useState(true);
 
-  const API = "http://localhost:5000/api/promotion/active";
+  const API = "https://complaintbox-ownf.onrender.com/api/promotion/active";
 
   useEffect(() => {
     const fetchPromotions = async () => {

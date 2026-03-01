@@ -12,7 +12,7 @@ export default function BorrowedItems() {
     person: "",
   });
 
-  const API = "http://localhost:5000/api/borrowed";
+  const API = "https://complaintbox-ownf.onrender.com/api/borrowed";
 
   /* ================= FETCH ================= */
 
