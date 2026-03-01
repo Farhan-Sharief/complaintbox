@@ -9,7 +9,8 @@ export default function Dashboard() {
   const [summary, setSummary] = useState(null);
   const [loading, setLoading] = useState(true);
 
-  const API = "https://complaintbox-ownf.onrender.com/api/dashboard/summary";
+  const API =
+    "https://complaintbox-ownf.onrender.com/api/dashboard/summary";
 
   useEffect(() => {
     const fetchSummary = async () => {
@@ -29,7 +30,7 @@ export default function Dashboard() {
 
   if (loading || !summary) {
     return (
-      <div className="p-6 text-gray-400">
+      <div className="p-6 text-gray-400 text-center">
         Loading dashboard...
       </div>
     );
@@ -51,15 +52,15 @@ export default function Dashboard() {
       : 0;
 
   return (
-    <div className="space-y-8">
+    <div className="space-y-6 p-4 sm:p-6">
 
       {/* Header */}
-      <div className="flex justify-between items-center">
+      <div className="flex flex-col sm:flex-row sm:justify-between sm:items-center gap-4">
         <div>
-          <h1 className="text-3xl font-bold">
+          <h1 className="text-2xl sm:text-3xl font-bold">
             Financial Overview
           </h1>
-          <p className="text-gray-400">
+          <p className="text-gray-400 text-sm sm:text-base">
             Backend Powered Dashboard
           </p>
         </div>
@@ -67,7 +68,7 @@ export default function Dashboard() {
         <select
           value={filter}
           onChange={(e) => setFilter(e.target.value)}
-          className="bg-gray-800 border border-gray-700 rounded px-4 py-2 text-white"
+          className="bg-gray-800 border border-gray-700 rounded px-4 py-2 text-white w-full sm:w-auto"
         >
           <option value="thisMonth">This Month</option>
           <option value="lastMonth">Last Month</option>
@@ -75,8 +76,8 @@ export default function Dashboard() {
         </select>
       </div>
 
-      {/* KPI */}
-      <div className="grid grid-cols-5 gap-6">
+      {/* KPI Section */}
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-4 sm:gap-6">
         <StatCard
           title="Total Income"
           value={totalIncome}
@@ -113,37 +114,37 @@ export default function Dashboard() {
         />
       </div>
 
-      {/* Cash Flow */}
-      <div className="bg-gray-900/50 border border-gray-800 p-6 rounded-2xl">
+      {/* Cash Flow Summary */}
+      <div className="bg-gray-900/50 border border-gray-800 p-4 sm:p-6 rounded-2xl">
         <h3 className="text-lg font-semibold mb-4">
           Cash Flow Summary
         </h3>
 
-        <div className="grid grid-cols-4 gap-6">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6">
           <div>
-            <p className="text-gray-400">Assets</p>
-            <h2 className="text-xl font-bold text-blue-400">
+            <p className="text-gray-400 text-sm">Assets</p>
+            <h2 className="text-lg sm:text-xl font-bold text-blue-400">
               ₹{totalAssets.toLocaleString()}
             </h2>
           </div>
 
           <div>
-            <p className="text-gray-400">Liabilities</p>
-            <h2 className="text-xl font-bold text-red-400">
+            <p className="text-gray-400 text-sm">Liabilities</p>
+            <h2 className="text-lg sm:text-xl font-bold text-red-400">
               ₹{totalLiabilities.toLocaleString()}
             </h2>
           </div>
 
           <div>
-            <p className="text-gray-400">Salary Paid</p>
-            <h2 className="text-xl font-bold text-pink-400">
+            <p className="text-gray-400 text-sm">Salary Paid</p>
+            <h2 className="text-lg sm:text-xl font-bold text-pink-400">
               ₹{totalSalary.toLocaleString()}
             </h2>
           </div>
 
           <div>
-            <p className="text-gray-400">Net Worth</p>
-            <h2 className="text-xl font-bold text-green-400">
+            <p className="text-gray-400 text-sm">Net Worth</p>
+            <h2 className="text-lg sm:text-xl font-bold text-green-400">
               ₹{netWorth.toLocaleString()}
             </h2>
           </div>
@@ -151,16 +152,22 @@ export default function Dashboard() {
       </div>
 
       {/* Bottom Section */}
-      <div className="grid grid-cols-3 gap-6">
-        <div className="col-span-2 bg-gray-900/50 p-6 rounded-2xl">
-          <p className="text-gray-400">
+      <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
+        <div className="lg:col-span-2 bg-gray-900/50 p-4 sm:p-6 rounded-2xl">
+          <p className="text-gray-400 text-sm sm:text-base">
             Chart module can now be upgraded to backend data.
           </p>
+
+          {/* Optional Chart Component */}
+          <div className="mt-4">
+            <IncomeExpenseChart />
+          </div>
         </div>
 
-        <PromotionWidget />
+        <div>
+          <PromotionWidget />
+        </div>
       </div>
-
     </div>
   );
 }
